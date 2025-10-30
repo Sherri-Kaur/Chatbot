@@ -9,7 +9,6 @@ cat > .gitignore << 'EOF'
 chroma_db/
 vector_store/
 
-.env
 .venv
 env/
 venv/
