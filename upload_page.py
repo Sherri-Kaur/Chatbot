@@ -106,8 +106,8 @@ with st.sidebar:
     vision_available = is_vision_available()
     
     st.write("**System Status:**")
-    st.write(f"• ChromaDB: {'Ready' if db_exists else 'Not Found'}")
-    st.write(f"• Vision: {'Available' if vision_available else 'Not Available'}")
+    st.write(f"ChromaDB: {'Ready' if db_exists else 'Not Found'}")
+    st.write(f"Vision: {'Available' if vision_available else 'Not Available'}")
     
     if os.path.exists(IMAGE_STORAGE_PATH):
         image_count = len([f for f in os.listdir(IMAGE_STORAGE_PATH) if f.endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif', '.tiff'))])
@@ -236,7 +236,7 @@ if user_input and user_input.strip():
     
     # Generate RAG response with images
     with st.chat_message("assistant"):
-        with st.spinner("🔍 Searching documents and images..."):
+        with st.spinner("Searching documents and images..."):
             try:
                 if not test_rag.database_exists():
                     st.error("No database found. Please upload files first.")
