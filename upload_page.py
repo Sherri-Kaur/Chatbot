@@ -44,7 +44,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 def display_message_with_images(message):
-    """Display a message that may contain both text and images"""
     if isinstance(message, dict):
         # This is a message with structured content
         if "text" in message:
@@ -106,8 +105,8 @@ with st.sidebar:
     vision_available = is_vision_available()
     
     st.write("**System Status:**")
-    st.write(f"• ChromaDB: {'Ready' if db_exists else 'Not Found'}")
-    st.write(f"• Vision: {'Available' if vision_available else 'Not Available'}")
+    st.write(f"ChromaDB: {'Ready' if db_exists else 'Not Found'}")
+    st.write(f"Vision: {'Available' if vision_available else 'Not Available'}")
     
     if os.path.exists(IMAGE_STORAGE_PATH):
         image_count = len([f for f in os.listdir(IMAGE_STORAGE_PATH) if f.endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif', '.tiff'))])
