@@ -110,7 +110,6 @@ def process_multimodal_files(pdf_files, image_files):
     return all_chunks
 
 def save_to_chroma(chunks: list[Document]):
-    """Save documents to ChromaDB with retry logic"""
     valid_chunks = validate_documents(chunks)
     if not valid_chunks:
         return False
@@ -264,7 +263,7 @@ def query_rag(query_text: str):
         return error_msg, error_msg
 
 def query_rag_with_images(query_text: str):
-    """Enhanced query function that returns both text and image results"""
+  
     if not database_exists():
         return "No database found. Please upload and process files first.", "No database found.", []
     

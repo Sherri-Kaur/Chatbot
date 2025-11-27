@@ -236,7 +236,7 @@ if user_input and user_input.strip():
     
     # Generate RAG response with images
     with st.chat_message("assistant"):
-        with st.spinner("🔍 Searching documents and images..."):
+        with st.spinner("Searching documents and images..."):
             try:
                 if not test_rag.database_exists():
                     st.error("No database found. Please upload files first.")
